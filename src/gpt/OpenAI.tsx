@@ -3,7 +3,7 @@ import OpenAI from "openai";
 export async function makeRequest(userInput: string) {
     const key = localStorage.getItem("OPENAI_API_KEY")?.replace(/['"]+/g, '')
     if (key === null) {
-        throw new Error("API key not found");
+        console.log("API key not found")
         return null;
     }
 
@@ -11,7 +11,7 @@ export async function makeRequest(userInput: string) {
     const response = await openai.chat.completions.create({
         model: "gpt-4o",
         messages: [
-            {role: "system", content: "You are a helpful assistant."},
+            {role: "system", content: "Please respond to the following question with newlines but no bolded or underlined content:"},
             {role: "user", content: userInput}
         ],
         temperature: 1,

@@ -5,6 +5,13 @@
 }
 
 .Footer {
-  margin-top: 2rem;
-  
+  margin-top: 2rem;  
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }

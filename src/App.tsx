@@ -25,7 +25,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="App">
       <UserInput/>
       <br></br>
       <ChatGPT/>
