@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import './App.css'
 import { Button, Form } from 'react-bootstrap'
+import { ChatGPT } from './gpt/ChatGPT';
+import { UserInput } from './components/UserInput';
 
 
 let keyData = "";
@@ -24,11 +26,15 @@ function App() {
 
   return (
     <div>
-      <Form className="API-box">
+      <UserInput/>
+      <br></br>
+      <ChatGPT/>
+      <br></br>
+      <Form className="Footer">
         <Form.Label>API Key:</Form.Label>
         <Form.Control type="password" placeholder="Enter API Key" onChange={changeKey}/>
         <br></br>
-        <Button className="Submit-button" onClick={handleSubmit}>Submit</Button>
+        <Button onClick={handleSubmit}>Submit</Button>
       </Form>
     </div>
   )
