@@ -5,7 +5,18 @@ export async function makeRequest(userInput: string, model: string, temperature:
     if (key === null) {
         console.log("API key not found")
         return null;
+    } else {
+        console.log("APIKey: " + key)
     }
+
+    console.log("User Input: " + userInput)
+
+    console.log("Model: " + model +
+    "\nTemperature: " + temperature +
+    "\nMax Tokens: " + max_toekns +
+    "\nTop P: " + top_p +
+    "\nFrequency Penalty: " + frequency_penalty +
+    "\nPresence Penalty: " + presence_penalty);
 
     const openai = new OpenAI({apiKey: key , dangerouslyAllowBrowser: true });
     const response = await openai.chat.completions.create({
@@ -20,5 +31,7 @@ export async function makeRequest(userInput: string, model: string, temperature:
         frequency_penalty: frequency_penalty, //0,
         presence_penalty: presence_penalty, //0,
       });
-    return response.choices[0].message.content;
+    const responseText = response.choices[0].message.content;
+    console.log(responseText);
+    return responseText;
 }

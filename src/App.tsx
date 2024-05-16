@@ -4,6 +4,7 @@ import { Button, Form } from 'react-bootstrap'
 import { ChatGPT } from './gpt/ChatGPT';
 import { UserInput } from './components/UserInput';
 
+localStorage.clear();
 
 let keyData = "";
 const saveKeyData = "OPENAI_API_KEY";
@@ -11,6 +12,7 @@ const prevKey = localStorage.getItem(saveKeyData);
 if (prevKey !== null) {
   keyData = JSON.parse(prevKey);
 }
+
 
 function App() {
   const [key, setKey] = useState<string>(keyData);
@@ -22,6 +24,11 @@ function App() {
 
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
     setKey(event.target.value);
+  }
+
+  const clearData = () => {
+    localStorage.clear();
+    window.location.reload();
   }
 
   return (
@@ -36,6 +43,8 @@ function App() {
         <br></br>
         <Button onClick={handleSubmit}>Submit</Button>
       </Form>
+      <br></br>
+      <Button onClick={clearData}>Clear Data</Button>
     </div>
   )
 }

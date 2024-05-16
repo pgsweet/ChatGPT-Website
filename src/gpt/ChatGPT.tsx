@@ -6,7 +6,7 @@ import "./ChatGPT.css";
 export function ChatGPT(): JSX.Element {
     const [userInput, setUserInput] = useState<string>("");
     const [response, setResponse] = useState<string>("");
-    const [model, setModel] = useState<string>("Select Model");
+    const [model, setModel] = useState<string>("gpt-4o");
     const [temperature, setTemperature] = useState<number>(1);
     const [maxTokens, setMaxTokens] = useState<number>(750);
     const [topP, setTopP] = useState<number>(1);
@@ -91,58 +91,76 @@ export function ChatGPT(): JSX.Element {
         <div>
             <button onClick={getResults}>Get Answer</button>
             <br></br>
-            <div>
-                <label htmlFor="options">Choose a model: </label> 
-                <select id="options" value={model} onChange={updateModel}> 
-                    <option value="" disabled>Select one</option> 
-                    <option value="gpt-4o">GPT-4o</option>
-                    <option value="gpt-4-turbo">GPT-4 Turbo</option>
-                    <option value="gpt-4">GPT-4</option>
-                    <option value="gpt-3">GPT-3</option>
-                </select> 
+            <div className="Customization">
+                <h3>Customize your response:</h3>
+                <div className="Customization-fields">
+                    <div className="Field">
+                        <label htmlFor="options">Choose a model: </label>
+                        <br></br> 
+                        <select id="options" value={model} onChange={updateModel}> 
+                            <option value="" disabled>Select Model</option> 
+                            <option value="gpt-4o">GPT-4o</option>
+                            <option value="gpt-4-turbo">GPT-4 Turbo</option>
+                            <option value="gpt-4">GPT-4</option>
+                            <option value="gpt-3">GPT-3</option>
+                        </select> 
+                    </div>
+                    <br></br>
+                    <div className="Field">
+                        <label htmlFor="temperature">Temperature:</label>
+                        <br></br>
+                        <input type="text" value={temperature} onChange={updateTemperature}/>
+                        <br></br>
+                        <input type="range" min="0" max="2" step="0.01" value={temperature} onChange={updateTemperature}/>
+                        <br></br>
+                        default 1
+                    </div>
+                    <br></br>
+                    <div className="Field">
+                        <label htmlFor="maxTokens">Max Tokens:</label>
+                        <br></br>
+                        <input type="text" value={maxTokens} onChange={updateMaxTokens}/>
+                        <br></br>
+                        default 750
+                    </div>
+                    <br></br>
+                    <div className="Field">
+                        <label htmlFor="topP">Top P:</label>
+                        <br></br>
+                        <input type="text" value={topP} onChange={updateTopP}/>
+                        <br></br>
+                        <input type="range" min="0" max="1" step="0.01" value={topP} onChange={updateTopP}/>
+                        <br></br>
+                        default 1
+                    </div>
+                    <br></br>
+                    <div className="Field">
+                        <label htmlFor="frequencyPenalty">Frequency Penalty:</label>
+                        <br></br>
+                        <input type="text" value={frequencyPenalty} onChange={updateFrequencyPenalty}/>
+                        <br></br>
+                        <input type="range" min="0" max="2" step="0.01" value={frequencyPenalty} onChange={updateFrequencyPenalty}/>
+                        <br></br>
+                        default 0
+                    </div>
+                    <br></br>
+                    <div className="Field">
+                        <label htmlFor="presencePenalty">Presence Penalty:</label>
+                        <br></br>
+                        <input type="text" value={presencePenalty} onChange={updatePresencePenalty}/>
+                        <br></br>
+                        <input type="range" min="0" max="2" step="0.01" value={presencePenalty} onChange={updatePresencePenalty}/>
+                        <br></br>
+                        default 0
+                    </div>
+                </div>
             </div>
-            <br></br>
-            <div>
-                <label htmlFor="temperature">Temperature:</label>
-                <input type="text" value={temperature} onChange={updateTemperature}/>
-                default 1
-                <br></br>
-                <input type="range" min="0" max="2" step="0.01" value={temperature} onChange={updateTemperature}/>
-            </div>
-            <br></br>
-            <div>
-                <label htmlFor="maxTokens">Max Tokens:</label>
-                <input type="text" value={maxTokens} onChange={updateMaxTokens}/>
-                default 750
-            </div>
-            <br></br>
-            <div>
-                <label htmlFor="topP">Top P:</label>
-                <input type="text" value={topP} onChange={updateTopP}/>
-                default 1
-                <br></br>
-                <input type="range" min="0" max="1" step="0.01" value={topP} onChange={updateTopP}/>
-            </div>
-            <br></br>
-            <div>
-                <label htmlFor="frequencyPenalty">Frequency Penalty:</label>
-                <input type="text" value={frequencyPenalty} onChange={updateFrequencyPenalty}/>
-                default 0
-                <br></br>
-                <input type="range" min="0" max="2" step="0.01" value={frequencyPenalty} onChange={updateFrequencyPenalty}/>
-            </div>
-            <br></br>
-            <div>
-                <label htmlFor="presencePenalty">Presence Penalty:</label>
-                <input type="text" value={presencePenalty} onChange={updatePresencePenalty}/>
-                default 0
-                <br></br>
-                <input type="range" min="0" max="2" step="0.01" value={presencePenalty} onChange={updatePresencePenalty}/>
-            </div>
-            <p>Response with:</p>
-            <div className="Response">
-                {response}
-            </div>
+            {response !== "" && <div>
+                <p>Response with:</p>
+                <div className="Response">
+                    {response}
+                </div>
+            </div>}
         </div>
     )
 }

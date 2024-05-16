@@ -8,7 +8,7 @@ export function UserInput():  JSX.Element {
     
     return (
         <div className="User-input">
-            <h2>Enter input here:</h2>
+            <h2>Enter prompt here:</h2>
             <input type="text" placeholder="Enter text here" onChange={changeInput} className="Text-box"/>
         </div>
     )
