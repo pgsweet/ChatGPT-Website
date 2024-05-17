@@ -4,8 +4,6 @@ import { Button, Form } from 'react-bootstrap'
 import { ChatGPT } from './gpt/ChatGPT';
 import { UserInput } from './components/UserInput';
 
-localStorage.clear();
-
 let keyData = "";
 const saveKeyData = "OPENAI_API_KEY";
 const prevKey = localStorage.getItem(saveKeyData);
