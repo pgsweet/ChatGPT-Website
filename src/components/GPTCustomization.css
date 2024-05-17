@@ -1,0 +1,19 @@
+.Customization {
+    width: 90vw;
+    outline: 2px solid #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.Field {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.Customization-fields {
+    display: flex;
+    width: 100%;
+    margin: 10px 0;
+}
