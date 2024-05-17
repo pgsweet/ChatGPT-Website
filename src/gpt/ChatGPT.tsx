@@ -5,6 +5,7 @@ import "./ChatGPT.css";
 
 export function ChatGPT(): JSX.Element {
     const [userInput, setUserInput] = useState<string>("");
+    const [systemInput, setSystemInput] = useState<string>("");
     const [response, setResponse] = useState<string>("");
     const [model, setModel] = useState<string>("gpt-4o");
     const [temperature, setTemperature] = useState<number>(1);
@@ -83,14 +84,13 @@ export function ChatGPT(): JSX.Element {
 
     async function getResults() {
         setUserInput(localStorage.getItem("userInput") || "");
-        const response = await makeRequest(userInput, model, temperature, maxTokens, topP, frequencyPenalty, presencePenalty);
+        setSystemInput(localStorage.getItem("systemInput") || "");
+        const response = await makeRequest(userInput, systemInput, model, temperature, maxTokens, topP, frequencyPenalty, presencePenalty);
         setResponse(response || "");
     }
 
     return (
         <div>
-            <button onClick={getResults}>Get Answer</button>
-            <br></br>
             <div className="Customization">
                 <h3>Customize your response:</h3>
                 <div className="Customization-fields">
@@ -155,6 +155,9 @@ export function ChatGPT(): JSX.Element {
                     </div>
                 </div>
             </div>
+            <br></br>
+            <button onClick={getResults}>Get Answer</button>
+            <br></br>
             {response !== "" && <div>
                 <p>Response with:</p>
                 <div className="Response">

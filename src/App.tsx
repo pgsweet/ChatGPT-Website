@@ -31,6 +31,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1>ChatGPT API Website</h1>
       <UserInput/>
       <br></br>
       <ChatGPT/>
@@ -39,10 +40,11 @@ function App() {
         <Form.Label>API Key:</Form.Label>
         <Form.Control type="password" placeholder="Enter API Key" onChange={changeKey}/>
         <br></br>
+        <br></br>
         <Button onClick={handleSubmit}>Submit</Button>
       </Form>
       <br></br>
-      <Button onClick={clearData}>Clear Data</Button>
+      <Button className="Clear-data-button" onClick={clearData}>Clear Data</Button>
     </div>
   )
 }

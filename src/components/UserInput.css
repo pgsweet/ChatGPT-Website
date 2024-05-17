@@ -1,16 +1,22 @@
 .User-input {
-    justify-content: center;
-    align-items: center;
     margin-top: 20px;
     width: fit-content;
     height: fit-content;
 }
 
 .Text-box {
-    width: 60vw;
-    height: 20vh;
+    width: 40vw;
     margin-right: 10px;
     padding: 5px;
     border-radius: 5px;
     border: 1px solid #ccc;
+}
+
+.Row {
+    display: flex;
+    width: 90vw;
+}
+
+.Column {
+    flex: 50%;
 }
