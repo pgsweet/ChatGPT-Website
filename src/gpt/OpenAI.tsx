@@ -2,7 +2,7 @@ import OpenAI from "openai";
 
 export async function makeRequest(userInput: string, model: string, temperature: number, max_toekns: number, top_p: number, frequency_penalty: number, presence_penalty: number) {
     const key = localStorage.getItem("OPENAI_API_KEY")?.replace(/['"]+/g, '')
-    if (key === null) {
+    if (key === undefined || key === null) {
         console.log("API key not found")
         return null;
     } else {
