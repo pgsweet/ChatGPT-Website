@@ -95,7 +95,7 @@ export function ChatGPT(): JSX.Element {
                 <h3>Customize your response:</h3>
                 <div className="Customization-fields">
                     <div className="Field">
-                        <label htmlFor="options">Choose a model: </label>
+                        <label>Choose a model: </label>
                         <br></br> 
                         <select id="options" value={model} onChange={updateModel}> 
                             <option value="" disabled>Select Model</option> 
@@ -107,7 +107,7 @@ export function ChatGPT(): JSX.Element {
                     </div>
                     <br></br>
                     <div className="Field">
-                        <label htmlFor="temperature">Temperature:</label>
+                        <label>Temperature:</label>
                         <br></br>
                         <input type="text" value={temperature} onChange={updateTemperature}/>
                         <br></br>
@@ -117,7 +117,7 @@ export function ChatGPT(): JSX.Element {
                     </div>
                     <br></br>
                     <div className="Field">
-                        <label htmlFor="maxTokens">Max Tokens:</label>
+                        <label >Max Tokens:</label>
                         <br></br>
                         <input type="text" value={maxTokens} onChange={updateMaxTokens}/>
                         <br></br>
@@ -125,7 +125,7 @@ export function ChatGPT(): JSX.Element {
                     </div>
                     <br></br>
                     <div className="Field">
-                        <label htmlFor="topP">Top P:</label>
+                        <label>Top P:</label>
                         <br></br>
                         <input type="text" value={topP} onChange={updateTopP}/>
                         <br></br>
@@ -135,7 +135,7 @@ export function ChatGPT(): JSX.Element {
                     </div>
                     <br></br>
                     <div className="Field">
-                        <label htmlFor="frequencyPenalty">Frequency Penalty:</label>
+                        <label>Frequency Penalty:</label>
                         <br></br>
                         <input type="text" value={frequencyPenalty} onChange={updateFrequencyPenalty}/>
                         <br></br>
@@ -145,7 +145,7 @@ export function ChatGPT(): JSX.Element {
                     </div>
                     <br></br>
                     <div className="Field">
-                        <label htmlFor="presencePenalty">Presence Penalty:</label>
+                        <label>Presence Penalty:</label>
                         <br></br>
                         <input type="text" value={presencePenalty} onChange={updatePresencePenalty}/>
                         <br></br>
