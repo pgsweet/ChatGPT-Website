@@ -18,6 +18,11 @@ export async function makeRequest(userInput: string, model: string, temperature:
     "\nFrequency Penalty: " + frequency_penalty +
     "\nPresence Penalty: " + presence_penalty);
 
+    if (userInput === "") {
+        console.log("No user input, no request made")
+        return null;
+    }
+
     const openai = new OpenAI({apiKey: key , dangerouslyAllowBrowser: true });
     const response = await openai.chat.completions.create({
         model: model, //"gpt-4o",
