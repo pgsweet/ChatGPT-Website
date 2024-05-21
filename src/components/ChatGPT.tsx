@@ -1,17 +1,14 @@
 import { useState } from "react";
-import { makeRequest } from "./OpenAI";
+import { makeRequest } from "../gpt/OpenAI";
 import "./ChatGPT.css";
-import { GPTCustomization } from "../components/GPTCustomization";
+import { GPTCustomization } from "./GPTCustomization";
 
 export function ChatGPT(): JSX.Element {
-    const [userInput, setUserInput] = useState<string>("");
-    const [systemInput, setSystemInput] = useState<string>("");
     const [response, setResponse] = useState<string>("");
 
     async function getResults() {
-        setUserInput(localStorage.getItem("userInput") || "");
-        setSystemInput(localStorage.getItem("systemInput") || "");
-
+        const userInput = localStorage.getItem("userInput") || "";
+        const systemInput = localStorage.getItem("systemInput") || "";
         const model = localStorage.getItem("model") || "gpt-4o";
         const temperature = parseFloat(localStorage.getItem("temperature") || "1");
         const maxTokens = parseInt(localStorage.getItem("maxTokens") || "750");

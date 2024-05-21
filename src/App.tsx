@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './App.css'
 import { Button, Form } from 'react-bootstrap'
-import { ChatGPT } from './gpt/ChatGPT';
+import { ChatGPT } from './components/ChatGPT';
 import { UserInput } from './components/UserInput';
 
 let keyData = "";
