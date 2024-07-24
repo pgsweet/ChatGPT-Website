@@ -4,6 +4,7 @@ export async function makeRequest(userInput: string, systemInput: string, model:
     const key = localStorage.getItem("OPENAI_API_KEY")?.replace(/['"]+/g, '')
     if (key === undefined || key === null) {
         console.log("API key not found")
+        alert("API key not found")
         return null;
     } else {
         console.log("APIKey: " + key)

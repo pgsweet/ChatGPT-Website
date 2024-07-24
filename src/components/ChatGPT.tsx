@@ -2,6 +2,7 @@ import { useState } from "react";
 import { makeRequest } from "../gpt/OpenAI";
 import "./ChatGPT.css";
 import { GPTCustomization } from "./GPTCustomization";
+import MarkdownRenderer from "./Markdown";
 
 export function ChatGPT(): JSX.Element {
     const [response, setResponse] = useState<string>("");
@@ -29,7 +30,7 @@ export function ChatGPT(): JSX.Element {
             {response !== "" && <div>
                 <p>Response with:</p>
                 <div className="Response">
-                    {response}
+                    <MarkdownRenderer content={response} />
                 </div>
             </div>}
         </div>
