@@ -108,7 +108,7 @@ export function GPTCustomization(): JSX.Element {
                         <br></br>
                         <input type="range" min="0" max="2" step="0.01" value={temperature} onChange={updateTemperature}/>
                         <br></br>
-                        default 1
+                        Default 1
                     </div>
                     <br></br>
                     <div className="Field">
@@ -116,7 +116,7 @@ export function GPTCustomization(): JSX.Element {
                         <br></br>
                         <input type="text" value={maxTokens} onChange={updateMaxTokens}/>
                         <br></br>
-                        default 750
+                        Default 750
                     </div>
                     <br></br>
                     <div className="Field">
@@ -126,7 +126,7 @@ export function GPTCustomization(): JSX.Element {
                         <br></br>
                         <input type="range" min="0" max="1" step="0.01" value={topP} onChange={updateTopP}/>
                         <br></br>
-                        default 1
+                        Default 1
                     </div>
                     <br></br>
                     <div className="Field">
@@ -136,7 +136,7 @@ export function GPTCustomization(): JSX.Element {
                         <br></br>
                         <input type="range" min="0" max="2" step="0.01" value={frequencyPenalty} onChange={updateFrequencyPenalty}/>
                         <br></br>
-                        default 0
+                        Default 0
                     </div>
                     <br></br>
                     <div className="Field">
@@ -146,7 +146,7 @@ export function GPTCustomization(): JSX.Element {
                         <br></br>
                         <input type="range" min="0" max="2" step="0.01" value={presencePenalty} onChange={updatePresencePenalty}/>
                         <br></br>
-                        default 0
+                        Default 0
                     </div>
                 </div>
             </div>
