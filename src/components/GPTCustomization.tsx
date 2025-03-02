@@ -93,6 +93,7 @@ export function GPTCustomization(): JSX.Element {
                         <br></br> 
                         <select id="options" value={model} onChange={updateModel}> 
                             <option value="" disabled>Select Model</option> 
+                            <option value="gpt-4.5-preview">GPT-4.5 Preview</option>
                             <option value="gpt-4o">GPT-4o</option>
                             <option value="gpt-4o-mini">GPT-4o-Mini</option>
                             <option value="gpt-4-turbo">GPT-4 Turbo</option>
