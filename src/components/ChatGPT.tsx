@@ -10,7 +10,7 @@ export function ChatGPT(): JSX.Element {
     async function getResults() {
         const userInput = localStorage.getItem("userInput") || "";
         const systemInput = localStorage.getItem("systemInput") || "";
-        const model = localStorage.getItem("model") || "gpt-4o";
+        const model = localStorage.getItem("model") || "gpt-4.5-preview";
         const temperature = parseFloat(localStorage.getItem("temperature") || "1");
         const maxTokens = parseInt(localStorage.getItem("maxTokens") || "750");
         const topP = parseFloat(localStorage.getItem("topP") || "1");
